@@ -1,15 +1,29 @@
 package codes;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+
+import lombok.Data;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
+@Data
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Student {
     @Id
     private int StudentId;
     private String firstName;
     private String secondName;
     private String studentNumber;
+    @Embedded
+    private  Address address;
+//    @OneToMany(mappedBy = "student")
+    @OneToOne(fetch = FetchType.EAGER)
+    private LabTop labTop;
 
     @Override
     public String toString() {

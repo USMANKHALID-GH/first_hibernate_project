@@ -1,10 +1,12 @@
 package codes;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-public class Teacher {
+public class Teacher1 {
     @Id
     private int  teacherId;
     private String teachersName;
@@ -12,7 +14,7 @@ public class Teacher {
     private String teacherCode;
     private String telefonNumber;
 
-    public Teacher(int teacherId, String teachersName, String teacherSubject, String teacherCode, String telefonNumber) {
+    public Teacher1(int teacherId, String teachersName, String teacherSubject, String teacherCode, String telefonNumber) {
         this.teacherId = teacherId;
         this.teachersName = teachersName;
         this.teacherSubject = teacherSubject;
@@ -20,7 +22,7 @@ public class Teacher {
         this.telefonNumber = telefonNumber;
     }
 
-    public Teacher() {
+    public Teacher1() {
 
     }
 
